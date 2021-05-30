@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "chestnut-album-front",
+  "appid": "touristappid",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}
