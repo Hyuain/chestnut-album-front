@@ -30,13 +30,22 @@ declare interface IGetPreOssInfo extends IHttp {
 declare interface IPostPhotos extends IHttp {
   request: {
     url: string
+    albumId: number
   }
 }
 
 declare interface IGetPhotos extends IHttp {
   request: {
+    albumId: number
     page: number
     size?: number
   }
   response: IPageData<IImageItem>
 }
+
+declare interface IPostAlbums extends IHttp {
+  request: {
+    name: string
+  }
+}
+

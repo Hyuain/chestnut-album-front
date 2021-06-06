@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react"
-import { View } from "@tarojs/components"
+import { Input, View } from "@tarojs/components"
 import Taro from '@tarojs/taro'
+import { BaseEventOrig } from "@tarojs/components/types/common"
+import { InputProps } from "@tarojs/components/types/Input"
 import ENVIRONMENT from "../../../environments/environment.local"
 import './index.scss'
 import { get, post } from "../../../lib/request"
@@ -10,6 +12,7 @@ import { getCompleteImageUrl } from "../../utils/utils"
 const Index = () => {
 
   const [picList, setPicList] = useState<IImageItem[]>([])
+  const [albumNameInput, setAlbumNameInput] = useState<string>("")
 
   const handleLogin = useCallback(
     () => {
@@ -41,7 +44,7 @@ const Index = () => {
         })
       }).then((res) => {
         if (res.statusCode !== 204) { throw new Error("有问题！") }
-        return post<IPostPhotos>("/photos", { url: key })
+        return post<IPostPhotos>("/photos", { url: key, albumId: 1 })
       }).then((res) => {
         console.log(res)
       })
@@ -50,7 +53,7 @@ const Index = () => {
 
   const handleGetPhotos = useCallback(
     () => {
-      get<IGetPhotos>("/photos", { page: 1 }).then((res) => {
+      get<IGetPhotos>("/photos", { albumId: 1, page: 1 }).then((res) => {
         console.log(res.data.list)
         setPicList(res.data.list)
       })
@@ -66,6 +69,29 @@ const Index = () => {
     }, [picList]
   )
 
+  const handleCreateAlbum = useCallback(
+    () => {
+      post<IPostAlbums>("/albums", { name: albumNameInput }).then((res) => {
+        console.log(res)
+      })
+    }, [albumNameInput]
+  )
+
+  const handleInputAlbumName = useCallback(
+    (e: BaseEventOrig<InputProps.inputEventDetail>) => {
+      const value = e.detail.value
+      setAlbumNameInput(value)
+    }, []
+  )
+
+  const handleBuildRelation = useCallback(
+    () => {
+      post("/user_album_relations", { album_id: 1, user_id: 1, authority: 1 }).then((res) => {
+        console.log(res)
+      })
+    }, []
+  )
+
   return (
     <View className='index'>
       <View>Hello world!</View>
@@ -78,6 +104,10 @@ const Index = () => {
           return <View onClick={() => handlePreviewPhotos(item)}><MyImage src={item.url} /></View>
         })}
       </View>
+      <Input type='text' placeholder='请输入相簿名' value={albumNameInput} onInput={handleInputAlbumName} />
+      <View onClick={handleCreateAlbum}>点击这里新建相簿</View>
+      <View onClick={handleBuildRelation}>点击这里建立联系</View>
+      <View onClick={() => get("/albums", {}).then((res) => {console.log(res)})}>测试</View>
     </View>
   )
 }
