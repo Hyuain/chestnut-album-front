@@ -5,6 +5,7 @@ import ENVIRONMENT from "../../../environments/environment.local"
 import './index.scss'
 import { get, post } from "../../../lib/request"
 import MyImage from "../../components/my-image/my-image"
+import { getCompleteImageUrl } from "../../utils/utils"
 
 const Index = () => {
 
@@ -56,6 +57,15 @@ const Index = () => {
     }, []
   )
 
+  const handlePreviewPhotos = useCallback(
+    (current: IImageItem) => {
+      Taro.previewImage({
+        urls: picList.map((item) => getCompleteImageUrl(item.url)),
+        current: getCompleteImageUrl(current.url),
+      })
+    }, [picList]
+  )
+
   return (
     <View className='index'>
       <View>Hello world!</View>
@@ -65,7 +75,7 @@ const Index = () => {
       <View>
         {picList?.map((item) => {
           // eslint-disable-next-line react/jsx-key
-          return <MyImage src={item.url} />
+          return <View onClick={() => handlePreviewPhotos(item)}><MyImage src={item.url} /></View>
         })}
       </View>
     </View>

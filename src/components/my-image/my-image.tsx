@@ -1,6 +1,6 @@
 import { Image } from "@tarojs/components"
-import ENVIRONMENT from "../../../environments/environment.local"
 import "./my-image.scss"
+import { getCompleteImageUrl } from "../../utils/utils"
 
 export interface IMyImageProps {
   src: string
@@ -9,7 +9,7 @@ export interface IMyImageProps {
 const MyImage = (props: IMyImageProps) => {
 
   return (
-    <Image mode='aspectFit' src={ENVIRONMENT.OSS_HOST + "/" + props.src} />
+    <Image mode='aspectFit' src={getCompleteImageUrl(props.src)} />
   )
 }
 
