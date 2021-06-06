@@ -1751,6 +1751,26 @@
     webpack-dev-server "3.11.0"
     webpack-format-messages "^2.0.5"
 
+"@tsconfig/node10@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.nlark.com/@tsconfig/node10/download/@tsconfig/node10-1.0.7.tgz#1eb1de36c73478a2479cc661ef5af1c16d86d606"
+  integrity sha1-HrHeNsc0eKJHnMZh71rxwW2G1gY=
+
+"@tsconfig/node12@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/@tsconfig/node12/download/@tsconfig/node12-1.0.7.tgz#677bd9117e8164dc319987dd6ff5fc1ba6fbf18b"
+  integrity sha1-Z3vZEX6BZNwxmYfdb/X8G6b78Ys=
+
+"@tsconfig/node14@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.nlark.com/@tsconfig/node14/download/@tsconfig/node14-1.0.0.tgz#5bd046e508b1ee90bc091766758838741fdefd6e"
+  integrity sha1-W9BG5Qix7pC8CRdmdYg4dB/e/W4=
+
+"@tsconfig/node16@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.nlark.com/@tsconfig/node16/download/@tsconfig/node16-1.0.1.tgz#a6ca6a9a0ff366af433f42f5f0e124794ff6b8f1"
+  integrity sha1-pspqmg/zZq9DP0L18OEkeU/2uPE=
+
 "@types/archy@^0.0.31":
   version "0.0.31"
   resolved "https://registry.nlark.com/@types/archy/download/@types/archy-0.0.31.tgz?cache=0&sync_timestamp=1621240665918&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Farchy%2Fdownload%2F%40types%2Farchy-0.0.31.tgz#01650a4641e7e1d11dbd64eda42eec9a2f829c7f"
@@ -2273,6 +2293,11 @@ archy@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/archy/download/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
   integrity sha1-+cjBN1fMHde8N5rHeyxipcKGjEA=
+
+arg@^4.1.0:
+  version "4.1.3"
+  resolved "https://registry.npm.taobao.org/arg/download/arg-4.1.3.tgz?cache=0&sync_timestamp=1605574972657&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Farg%2Fdownload%2Farg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
+  integrity sha1-Jp/HrVuOQstjyJbVZmAXJhwUQIk=
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -3711,6 +3736,11 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+create-require@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/create-require/download/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
+  integrity sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=
+
 cross-fetch@^3.0.4:
   version "3.1.4"
   resolved "https://registry.npm.taobao.org/cross-fetch/download/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
@@ -4175,6 +4205,11 @@ detect-port@1.3.0:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+diff@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.npm.taobao.org/diff/download/diff-4.0.2.tgz?cache=0&sync_timestamp=1604803664325&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdiff%2Fdownload%2Fdiff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
+  integrity sha1-YPOuy4nV+uUgwRqhnvwruYKq3n0=
 
 diffie-hellman@^5.0.0:
   version "5.0.3"
@@ -7188,6 +7223,11 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
+make-error@^1.1.1:
+  version "1.3.6"
+  resolved "https://registry.npm.taobao.org/make-error/download/make-error-1.3.6.tgz#2eb2e37ea9b67c4891f684a1394799af484cf7a2"
+  integrity sha1-LrLjfqm2fEiR9oShOUeZr0hM96I=
+
 map-cache@^0.2.2:
   version "0.2.2"
   resolved "https://registry.nlark.com/map-cache/download/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
@@ -10136,7 +10176,7 @@ source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.16, source-map-support@~0.5.12:
+source-map-support@^0.5.16, source-map-support@^0.5.17, source-map-support@~0.5.12:
   version "0.5.19"
   resolved "https://registry.nlark.com/source-map-support/download/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha1-qYti+G3K9PZzmWSMCFKRq56P7WE=
@@ -10875,6 +10915,22 @@ trough@^1.0.0:
   version "1.0.5"
   resolved "https://registry.nlark.com/trough/download/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha1-uLY5zvrX0LsqvTfUM/+Ck++l9AY=
+
+ts-node@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.nlark.com/ts-node/download/ts-node-10.0.0.tgz#05f10b9a716b0b624129ad44f0ea05dac84ba3be"
+  integrity sha1-BfELmnFrC2JBKa1E8OoF2shLo74=
+  dependencies:
+    "@tsconfig/node10" "^1.0.7"
+    "@tsconfig/node12" "^1.0.7"
+    "@tsconfig/node14" "^1.0.0"
+    "@tsconfig/node16" "^1.0.1"
+    arg "^4.1.0"
+    create-require "^1.1.0"
+    diff "^4.0.1"
+    make-error "^1.1.1"
+    source-map-support "^0.5.17"
+    yn "3.1.1"
 
 tsconfig-paths@^3.9.0:
   version "3.9.0"
@@ -11803,6 +11859,11 @@ yauzl@2.10.0:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
+
+yn@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/yn/download/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
+  integrity sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=
 
 yocto-queue@^0.1.0:
   version "0.1.0"
