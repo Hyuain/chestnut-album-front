@@ -14,11 +14,11 @@ const Index = () => {
   const handleLogin = useCallback(
     () => {
       Taro.login().then((res) => {
-        console.log("尝试login")
         return post<IPostSignIn>("/sing_in", { code: res.code })
       }).then((res) => {
         const cookie = res.header["Set-Cookie"]
         Taro.setStorage({ key: "cookie", data: cookie })
+        Taro.showToast({ title: "登陆成功" })
       })
     }, [],
   )
