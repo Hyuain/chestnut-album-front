@@ -3,6 +3,12 @@ declare interface IHttp {
   response: any
 }
 
+declare interface IPageData<T> {
+  page: number
+  totalCounts: number
+  list: T[]
+}
+
 declare interface IPostSignIn extends IHttp {
   request: {
     code: string
@@ -32,4 +38,5 @@ declare interface IGetPhotos extends IHttp {
     page: number
     size?: number
   }
+  response: IPageData<IImageItem>
 }

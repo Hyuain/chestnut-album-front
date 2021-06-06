@@ -1,11 +1,14 @@
-import { useCallback } from "react"
-import { View } from '@tarojs/components'
+import { useCallback, useState } from "react"
+import { View } from "@tarojs/components"
 import Taro from '@tarojs/taro'
 import ENVIRONMENT from "../../../environments/environment.local"
 import './index.scss'
 import { get, post } from "../../../lib/request"
+import MyImage from "../../components/my-image/my-image"
 
 const Index = () => {
+
+  const [picList, setPicList] = useState<IImageItem[]>([])
 
   const handleLogin = useCallback(
     () => {
@@ -46,8 +49,9 @@ const Index = () => {
 
   const handleGetPhotos = useCallback(
     () => {
-      get<IGetPhotos>("/photos", { page: 1, size: 1 }).then((res) => {
-        console.log(res)
+      get<IGetPhotos>("/photos", { page: 1 }).then((res) => {
+        console.log(res.data.list)
+        setPicList(res.data.list)
       })
     }, []
   )
@@ -58,6 +62,12 @@ const Index = () => {
       <View onClick={handleLogin}>登录一下下咯</View>
       <View onClick={handleChoose}>选择图片</View>
       <View onClick={handleGetPhotos}>获取图片列表</View>
+      <View>
+        {picList?.map((item) => {
+          // eslint-disable-next-line react/jsx-key
+          return <MyImage src={item.url} />
+        })}
+      </View>
     </View>
   )
 }
